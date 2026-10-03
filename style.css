@@ -318,11 +318,12 @@ a:hover {
 }
 
 /* --------------------------------------------------------------------------
-   5. Hero Section (Strict Grid, Container Queries & Centered Alignment)
+   5. Hero Section (Strict Modest Top Padding & 2-Row Layout)
    -------------------------------------------------------------------------- */
 .hero-section {
   position: relative;
-  padding: 4.5rem 0 4rem 0;
+  padding-top: clamp(24px, 4vw, 56px);
+  padding-bottom: 3rem;
   overflow-x: clip;
   width: 100%;
   border-bottom: 1px solid var(--accent-highlight);
@@ -333,19 +334,13 @@ a:hover {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2.5rem;
-  align-items: start;
+  align-items: start; /* Strictly start alignment, no extra vertical centering space */
   width: 100%;
 }
 
 @media (min-width: 768px) {
   .hero-grid {
     grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .hero-grid {
-    align-items: center; /* Vertically center left and right columns level on desktop */
   }
 }
 
@@ -356,7 +351,7 @@ a:hover {
   max-width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.25rem;
   box-sizing: border-box;
 }
 
@@ -402,7 +397,7 @@ a:hover {
   flex-direction: row;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
 }
 
 .hero-right {
@@ -410,7 +405,8 @@ a:hover {
   max-width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1.75rem;
+  align-items: center;
+  justify-content: flex-start;
   box-sizing: border-box;
 }
 
@@ -418,10 +414,10 @@ a:hover {
 .hero-image-stack {
   position: relative;
   width: 100%;
-  max-width: 280px;
+  max-width: 285px;
   margin: 0 auto;
   box-sizing: border-box;
-  padding: 8px; /* Rotation padding container */
+  padding: 8px; /* Rotation padding buffer */
 }
 
 .card-back-tilted {
@@ -460,7 +456,22 @@ a:hover {
   border-radius: 12px;
 }
 
-/* Stats Card (Real Info: 3 Projects & Tools) */
+/* Second Full-Width Row Directly Below Grid: 3 Projects Card + Marquee Card SIDE BY SIDE */
+.hero-bottom-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 32px;
+  width: 100%;
+  align-items: stretch;
+}
+
+@media (min-width: 768px) {
+  .hero-bottom-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 .glass-stats-card {
   position: relative;
   width: 100%;
@@ -472,6 +483,9 @@ a:hover {
   backdrop-filter: blur(12px);
   box-shadow: var(--glass-shadow);
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .stats-card-header {
@@ -532,7 +546,6 @@ a:hover {
   font-weight: 500;
 }
 
-/* Marquee Card */
 .glass-marquee-card {
   width: 100%;
   max-width: 100%;
@@ -544,6 +557,9 @@ a:hover {
   box-shadow: var(--glass-shadow);
   box-sizing: border-box;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .marquee-card-title {
@@ -771,7 +787,7 @@ a:hover {
 }
 
 /* --------------------------------------------------------------------------
-   8. Skills Section (2x2 Grid, Direct Sub-Heading List, Unique Accents)
+   8. Skills Section (2x2 Grid, Direct Sub-Heading List, No Spacer Rules)
    -------------------------------------------------------------------------- */
 .skills-grid {
   display: grid;
@@ -801,13 +817,16 @@ a:hover {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start; /* List sits directly under heading, spare space falls at bottom of card */
+  align-items: flex-start;
   height: 100%;
   overflow: hidden;
 }
 
 /* Card 1: Web Development (Browser Strip Top) */
 .web-card-header {
-  margin-bottom: 0.25rem;
+  margin-bottom: 0;
+  width: 100%;
 }
 
 .browser-strip {
@@ -818,7 +837,8 @@ a:hover {
   background: rgba(255, 255, 255, 0.6);
   border: 1px solid var(--glass-border);
   border-radius: 8px;
-  margin-bottom: 0.75rem;
+  margin-bottom: 12px; /* 12px margin below browser strip */
+  width: 100%;
 }
 
 .browser-dots {
@@ -845,6 +865,7 @@ a:hover {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  margin-bottom: 0;
 }
 
 .skill-icon-svg {
@@ -858,7 +879,9 @@ a:hover {
   font-family: var(--font-serif);
   font-size: clamp(1.15rem, 2.5vw, 1.45rem);
   font-weight: 600;
+  line-height: 1.2;
   color: var(--text-main);
+  margin-bottom: 0;
 }
 
 /* Card 2: UI/UX & Design (Figma Selection Box) */
@@ -867,8 +890,9 @@ a:hover {
   border: 1px solid var(--decorative);
   border-radius: 6px;
   padding: 0.4rem 0.65rem;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0;
   background: rgba(255, 255, 255, 0.3);
+  display: inline-block;
 }
 
 .corner-handle {
@@ -904,7 +928,8 @@ a:hover {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0;
+  width: 100%;
 }
 
 .big-o-tag {
@@ -928,13 +953,15 @@ a:hover {
   margin-right: 0.3rem;
 }
 
-/* List starts directly under heading with consistent 16px (1rem) gap */
+/* List starts directly under heading with exact 14px gap */
 .skill-list {
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  margin-top: 1rem; /* Exactly 16px gap on every card right under heading */
+  margin-top: 14px; /* Exactly 14px margin directly beneath heading! */
+  margin-bottom: 0;
+  width: 100%;
 }
 
 .skill-list li {

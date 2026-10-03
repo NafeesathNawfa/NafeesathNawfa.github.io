@@ -266,7 +266,7 @@
       </div>
     </section>
 
-    <!-- What I Can Contribute to a Website Operations Team Section -->
+    <!-- What I Can Contribute to a Website Operations Team Section with React Bits AnimatedList -->
     <section id="contributions" class="section contributions-section">
       <div class="container">
         <div class="section-header">
@@ -275,45 +275,64 @@
           <p class="section-subtitle">Combining developer skills and design awareness to support daily web site performance and user satisfaction.</p>
         </div>
 
-        <div class="contributions-grid">
-          <div class="contribution-card">
-            <div class="contribution-header">
-              <div class="contribution-icon" aria-hidden="true">🐛</div>
-              <h3>Bug Fixing</h3>
+        <div class="web-ops-layout">
+          <!-- Left Column: Core 4 Pillars -->
+          <div class="contributions-grid">
+            <div class="contribution-card">
+              <div class="contribution-header">
+                <div class="contribution-icon" aria-hidden="true">🐛</div>
+                <h3>Bug Fixing</h3>
+              </div>
+              <p>
+                Identifying, investigating, and resolving UI bugs, functional glitches, and layout breaks efficiently to keep user experiences consistent across pages.
+              </p>
             </div>
-            <p>
-              Identifying, investigating, and resolving UI bugs, functional glitches, and layout breaks efficiently to keep user experiences consistent across pages.
-            </p>
+
+            <div class="contribution-card">
+              <div class="contribution-header">
+                <div class="contribution-icon" aria-hidden="true">📝</div>
+                <h3>Content Updates</h3>
+              </div>
+              <p>
+                Applying regular text, asset, and media updates with precision, ensuring information stays accurate and code formatting remains clean.
+              </p>
+            </div>
+
+            <div class="contribution-card">
+              <div class="contribution-header">
+                <div class="contribution-icon" aria-hidden="true">📱</div>
+                <h3>Responsive Testing</h3>
+              </div>
+              <p>
+                Performing thorough testing across mobile, tablet, and desktop viewports, checking touch targets, alignment, and readable typography across devices.
+              </p>
+            </div>
+
+            <div class="contribution-card">
+              <div class="contribution-header">
+                <div class="contribution-icon" aria-hidden="true">⚙️</div>
+                <h3>Keeping the Site Running Smoothly</h3>
+              </div>
+              <p>
+                Monitoring operational stability, maintaining asset hygiene, minimizing unnecessary bloat, and ensuring pages remain fast and dependable.
+              </p>
+            </div>
           </div>
 
-          <div class="contribution-card">
-            <div class="contribution-header">
-              <div class="contribution-icon" aria-hidden="true">📝</div>
-              <h3>Content Updates</h3>
+          <!-- Right Column: Interactive <AnimatedList /> Component (React Bits Variant) -->
+          <div class="animated-list-wrapper">
+            <div class="animated-list-title">
+              <span>Interactive Operations Checklist</span>
+              <span class="keyboard-hint">Use ↑ ↓ keys to navigate</span>
             </div>
-            <p>
-              Applying regular text, asset, and media updates with precision, ensuring information stays accurate and code formatting remains clean.
-            </p>
-          </div>
-
-          <div class="contribution-card">
-            <div class="contribution-header">
-              <div class="contribution-icon" aria-hidden="true">📱</div>
-              <h3>Responsive Testing</h3>
+            
+            <div class="scroll-list-container" id="animated-list-container">
+              <div class="scroll-list" id="animated-scroll-list">
+                <!-- Items populated dynamically via AnimatedList script -->
+              </div>
+              <div class="top-gradient" id="top-gradient" style="opacity: 0;"></div>
+              <div class="bottom-gradient" id="bottom-gradient" style="opacity: 1;"></div>
             </div>
-            <p>
-              Performing thorough testing across mobile, tablet, and desktop viewports, checking touch targets, alignment, and readable typography across devices.
-            </p>
-          </div>
-
-          <div class="contribution-card">
-            <div class="contribution-header">
-              <div class="contribution-icon" aria-hidden="true">⚙️</div>
-              <h3>Keeping the Site Running Smoothly</h3>
-            </div>
-            <p>
-              Monitoring operational stability, maintaining asset hygiene, minimizing unnecessary bloat, and ensuring pages remain fast and dependable.
-            </p>
           </div>
         </div>
       </div>
@@ -390,7 +409,6 @@
     const themeToggleBtn = document.getElementById('theme-toggle');
     const rootEl = document.documentElement;
     
-    // Check saved preference or system preference
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
       rootEl.setAttribute('data-theme', savedTheme);
@@ -415,7 +433,6 @@
       mainNav.classList.toggle('nav-open');
     });
 
-    // Close mobile menu when nav link is clicked
     document.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', () => {
         mainNav.classList.remove('nav-open');
@@ -459,17 +476,116 @@
       });
     });
 
-    dialogCloseBtn.addEventListener('click', () => {
-      dialog.close();
+    dialogCloseBtn.addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', (e) => { if (e.target === dialog) dialog.close(); });
+
+    // --------------------------------------------------------------------------
+    // React Bits <AnimatedList /> Component Implementation
+    // --------------------------------------------------------------------------
+    const listItems = [
+      { text: "Bug Fixing & Layout Issue Resolution", badge: "Priority" },
+      { text: "Content & Asset Publishing", badge: "Daily" },
+      { text: "Cross-Device Responsive Testing", badge: "Mobile & Desktop" },
+      { text: "Site Stability & Reliability Checks", badge: "Continuous" },
+      { text: "Performance & Page Load Optimization", badge: "CWV Focus" },
+      { text: "WCAG Accessibility Compliance", badge: "High Contrast" },
+      { text: "Cross-Browser Compatibility Verification", badge: "Multi-Browser" },
+      { text: "Clean HTML5 & CSS3 Code Maintenance", badge: "Standards" },
+      { text: "Broken Link & Asset Auditing", badge: "Quality Assurance" },
+      { text: "Smooth Navigation & User Flow Testing", badge: "UX Protection" }
+    ];
+
+    const scrollList = document.getElementById('animated-scroll-list');
+    const topGradient = document.getElementById('top-gradient');
+    const bottomGradient = document.getElementById('bottom-gradient');
+    let selectedIndex = 0;
+
+    // Render items
+    function renderAnimatedList() {
+      scrollList.innerHTML = '';
+      listItems.forEach((itemObj, index) => {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'animated-item-wrapper';
+        wrapper.setAttribute('data-index', index);
+
+        const itemDiv = document.createElement('div');
+        itemDiv.className = `item ${selectedIndex === index ? 'selected' : ''}`;
+        
+        const p = document.createElement('p');
+        p.className = 'item-text';
+        p.innerHTML = `<span>${itemObj.text}</span> <span class="item-badge">${itemObj.badge}</span>`;
+
+        itemDiv.appendChild(p);
+        wrapper.appendChild(itemDiv);
+
+        wrapper.addEventListener('mouseenter', () => setSelection(index));
+        wrapper.addEventListener('click', () => setSelection(index));
+
+        scrollList.appendChild(wrapper);
+      });
+
+      setupObserver();
+    }
+
+    function setSelection(index) {
+      selectedIndex = index;
+      document.querySelectorAll('#animated-scroll-list .item').forEach((el, idx) => {
+        if (idx === index) {
+          el.classList.add('selected');
+        } else {
+          el.classList.remove('selected');
+        }
+      });
+    }
+
+    // Scroll gradient opacity handler
+    scrollList.addEventListener('scroll', (e) => {
+      const { scrollTop, scrollHeight, clientHeight } = e.target;
+      topGradient.style.opacity = Math.min(scrollTop / 50, 1);
+      const bottomDistance = scrollHeight - (scrollTop + clientHeight);
+      bottomGradient.style.opacity = scrollHeight <= clientHeight ? 0 : Math.min(bottomDistance / 50, 1);
     });
 
-    dialog.addEventListener('click', (e) => {
-      if (e.target === dialog) {
-        dialog.close();
+    // Keyboard Arrow Navigation (ArrowUp, ArrowDown, Tab, Enter)
+    window.addEventListener('keydown', (e) => {
+      if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') return;
+
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        setSelection(Math.min(selectedIndex + 1, listItems.length - 1));
+        scrollToSelected();
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        setSelection(Math.max(selectedIndex - 1, 0));
+        scrollToSelected();
       }
     });
 
-    // Update Copyright Year dynamically
+    function scrollToSelected() {
+      const selectedEl = scrollList.querySelector(`[data-index="${selectedIndex}"]`);
+      if (selectedEl) {
+        selectedEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+
+    // IntersectionObserver for scale/opacity inView effect
+    function setupObserver() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+          } else {
+            entry.target.classList.remove('in-view');
+          }
+        });
+      }, { root: scrollList, threshold: 0.4 });
+
+      document.querySelectorAll('#animated-scroll-list .animated-item-wrapper').forEach(el => observer.observe(el));
+    }
+
+    renderAnimatedList();
+
+    // Copyright year
     document.getElementById('copyright-year').textContent = new Date().getFullYear();
   </script>
 </body>

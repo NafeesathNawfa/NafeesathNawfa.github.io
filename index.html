@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nafeesath Nawfa L H F | Portfolio & Website Operations</title>
-  <meta name="description" content="Personal portfolio of Nafeesath Nawfa L H F - Student Developer and UI/UX Designer. Focused on clean, fast, and reliable web applications.">
+  <meta name="description" content="Personal portfolio of Nafeesath Nawfa L H F - Student Developer and UI/UX Designer. Clean, fast, and reliable web applications.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Skip link for accessibility -->
+  <!-- Accessibility Skip Link -->
   <a href="#main-content" class="skip-to-content">Skip to main content</a>
 
   <!-- Header Navigation -->
@@ -26,51 +26,107 @@
           <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
       </nav>
-      <div class="header-actions">
-        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle light/dark theme" title="Toggle theme">
-          <span class="theme-icon light-icon" aria-hidden="true">☀️</span>
-          <span class="theme-icon dark-icon" aria-hidden="true">🌙</span>
-        </button>
-        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation menu">
-          <span class="hamburger-bar"></span>
-          <span class="hamburger-bar"></span>
-          <span class="hamburger-bar"></span>
-        </button>
-      </div>
+      <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation menu">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
     </div>
   </header>
 
   <main id="main-content">
-    <!-- Intro / Hero Section -->
+    <!-- Hero Section (Recreated from Reference with Real Info & Light Glass Styling) -->
     <section id="intro" class="hero-section">
-      <div class="container hero-container">
-        <div class="hero-content">
-          <div class="badge hero-badge">
-            <span class="badge-dot"></span> Website Operations Candidate
+      <div class="container">
+        <div class="hero-grid">
+          
+          <!-- LEFT COLUMN -->
+          <div class="hero-left">
+            <!-- Badge -->
+            <div class="animate-fade-in delay-100">
+              <div class="badge">
+                <span class="badge-dot"></span>
+                Student developer &amp; UI/UX designer
+              </div>
+            </div>
+
+            <!-- Heading -->
+            <h1 class="hero-title animate-fade-in delay-200">
+              Nafeesath <span class="accent-word">Nawfa</span> L H F
+            </h1>
+
+            <!-- Description -->
+            <p class="hero-description animate-fade-in delay-300">
+              I build clean, fast, and reliable web applications with an emphasis on intuitive UI/UX design, responsive testing, and website operations maintenance.
+            </p>
+
+            <!-- Buttons -->
+            <div class="hero-actions animate-fade-in delay-400">
+              <a href="#projects" class="btn btn-primary">
+                View projects
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              </a>
+              <a href="https://github.com/NafeesathNawfa" target="_blank" rel="noopener noreferrer" class="btn btn-glass" aria-label="GitHub Profile (opens in new tab)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                GitHub
+              </a>
+            </div>
           </div>
-          <h1 class="hero-title">
-            Nafeesath Nawfa <span class="text-highlight">L H F</span>
-          </h1>
-          <p class="hero-subtitle">Student Developer & UI/UX Designer</p>
-          <p class="hero-description">
-            Building intuitive digital experiences and supporting website operations. Dedicated to delivering technical execution, bug fixing, and design precision to ensure web platforms remain clean, fast, and reliable.
-          </p>
-          <div class="hero-actions">
-            <a href="#projects" class="btn btn-primary">
-              View Projects
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-            </a>
-            <a href="#contact" class="btn btn-secondary">Get in Touch</a>
-            <a href="https://github.com/NafeesathNawfa" target="_blank" rel="noopener noreferrer" class="btn btn-outline" aria-label="GitHub Profile (opens in new tab)">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
-              GitHub
-            </a>
+
+          <!-- RIGHT COLUMN -->
+          <div class="hero-right">
+            <!-- Overlapping Rounded Photo Cards Stack -->
+            <div class="hero-image-stack animate-fade-in delay-300">
+              <div class="card-back-tilted" aria-hidden="true"></div>
+              <div class="card-front-photo">
+                <img src="assets/me.jpg" alt="Nafeesath Nawfa L H F photo" class="hero-photo-img">
+              </div>
+            </div>
+
+            <!-- Stats Card (Real Info: 3 Projects & Core Tools) -->
+            <div class="glass-stats-card animate-fade-in delay-500">
+              <div class="stats-card-header">
+                <div class="stats-icon-box" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                </div>
+                <div>
+                  <div class="stats-number">3 Projects</div>
+                  <div class="stats-label">Web, Game &amp; UI/UX</div>
+                </div>
+              </div>
+              
+              <div class="tools-pill-group">
+                <span class="tool-pill">React</span>
+                <span class="tool-pill">Godot 4</span>
+                <span class="tool-pill">Figma</span>
+              </div>
+            </div>
+
+            <!-- Marquee Card -->
+            <div class="glass-marquee-card animate-fade-in delay-500">
+              <div class="marquee-card-title">Tools I work with</div>
+              <div class="marquee-container">
+                <div class="animate-marquee">
+                  <!-- Duplicated list for seamless infinite loop -->
+                  <span class="marquee-item">React</span>
+                  <span class="marquee-item">JavaScript</span>
+                  <span class="marquee-item">Godot</span>
+                  <span class="marquee-item">Figma</span>
+                  <span class="marquee-item">Git</span>
+                  <span class="marquee-item">GitHub</span>
+                  <!-- Loop duplicate -->
+                  <span class="marquee-item">React</span>
+                  <span class="marquee-item">JavaScript</span>
+                  <span class="marquee-item">Godot</span>
+                  <span class="marquee-item">Figma</span>
+                  <span class="marquee-item">Git</span>
+                  <span class="marquee-item">GitHub</span>
+                </div>
+              </div>
+            </div>
+
           </div>
-          <div class="hero-highlights">
-            <span class="highlight-pill">Web & UI/UX Development</span>
-            <span class="highlight-pill">Responsive Design & Testing</span>
-            <span class="highlight-pill">Site Operations & Maintenance</span>
-          </div>
+
         </div>
       </div>
     </section>
@@ -79,13 +135,14 @@
     <section id="projects" class="section projects-section">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">Featured Projects</h2>
-          <p class="section-subtitle">Web applications, game development, and UI/UX design work</p>
+          <h2 class="section-title">Projects</h2>
+          <p class="section-subtitle">Web applications, 2D game development, and UI/UX design projects</p>
         </div>
 
         <div class="projects-grid">
+          
           <!-- Project 1: DriftCheck -->
-          <article class="project-card featured-card">
+          <article class="project-card">
             <div class="project-header">
               <div class="project-meta">
                 <span class="project-category">Hackathon Web App</span>
@@ -100,8 +157,8 @@
 
             <div class="project-details">
               <div class="detail-item">
-                <span class="detail-label">My Role:</span>
-                <span class="detail-value">Web Developer & UI/UX Designer</span>
+                <span class="detail-label">Role:</span>
+                <span class="detail-value">Web Developer &amp; UI/UX Designer</span>
               </div>
               <div class="detail-item">
                 <span class="detail-label">Tools Used:</span>
@@ -109,24 +166,13 @@
               </div>
             </div>
 
-            <!-- Project Screenshots -->
-            <div class="project-visuals">
-              <span class="visuals-label">App Screenshots (Click to expand):</span>
-              <div class="gallery-grid">
-                <button type="button" class="lightbox-trigger" data-image="assets/drift1.jpeg" data-caption="DriftCheck - Lab Results & Baseline Drift Dashboard">
-                  <img src="assets/drift1.jpeg" alt="DriftCheck dashboard screenshot showing lab result tracking and baseline comparison" loading="lazy">
-                  <span class="zoom-overlay">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
-                    Enlarge
-                  </span>
-                </button>
-                <button type="button" class="lightbox-trigger" data-image="assets/drift2.jpeg" data-caption="DriftCheck - Trend Chart & Analysis Details">
-                  <img src="assets/drift2.jpeg" alt="DriftCheck screenshot displaying trend charts and plain language result explanation" loading="lazy">
-                  <span class="zoom-overlay">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
-                    Enlarge
-                  </span>
-                </button>
+            <!-- Uncropped Tall Screenshots Side-by-Side -->
+            <div class="drift-gallery">
+              <div class="screenshot-frame">
+                <img src="assets/drift1.jpeg" alt="DriftCheck lab results tracking dashboard screenshot" loading="lazy">
+              </div>
+              <div class="screenshot-frame">
+                <img src="assets/drift2.jpeg" alt="DriftCheck trend chart and plain language explanation screenshot" loading="lazy">
               </div>
             </div>
 
@@ -141,24 +187,29 @@
             </div>
           </article>
 
-          <!-- Project 2: Spirited Acres -->
+          <!-- Project 2: Spirited Acres (Game Card with Screenshot at Top) -->
           <article class="project-card">
+            <!-- Uncropped Screenshot of 2D Farming Game in Godot 4 -->
+            <div class="game-image-frame">
+              <img src="assets/game.png" alt="Spirited Acres 2D Farming Game screenshot in Godot 4" loading="lazy">
+            </div>
+
             <div class="project-header">
               <div class="project-meta">
                 <span class="project-category">2D Game</span>
-                <span class="tool-tag">Godot 4.6.2</span>
+                <span class="tool-tag">Godot 4</span>
               </div>
               <h3 class="project-title">Spirited Acres</h3>
             </div>
             
             <p class="project-description">
-              A 2D farming game built in Godot 4.6.2, combining game logic design, interactive mechanics, and custom asset integration.
+              A 2D farming game I made in Godot 4 while learning game development, combining player movement, agricultural mechanics, tilemaps, and custom environment layouts.
             </p>
 
             <div class="project-details">
               <div class="detail-item">
-                <span class="detail-label">My Role:</span>
-                <span class="detail-value">Game Developer & Designer</span>
+                <span class="detail-label">Role:</span>
+                <span class="detail-value">Game Developer &amp; Designer</span>
               </div>
               <div class="detail-item">
                 <span class="detail-label">Tools Used:</span>
@@ -167,7 +218,7 @@
             </div>
 
             <div class="project-actions">
-              <a href="https://github.com/NafeesathNawfa/Spirited-Acres" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+              <a href="https://github.com/NafeesathNawfa/Spirited-Acres" target="_blank" rel="noopener noreferrer" class="btn btn-glass btn-sm">
                 View Repository
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
               </a>
@@ -190,7 +241,7 @@
 
             <div class="project-details">
               <div class="detail-item">
-                <span class="detail-label">My Role:</span>
+                <span class="detail-label">Role:</span>
                 <span class="detail-value">UI/UX Designer</span>
               </div>
               <div class="detail-item">
@@ -200,12 +251,13 @@
             </div>
 
             <div class="project-actions">
-              <a href="https://www.figma.com/design/ttNo605XT9KLRDltVsAO8F/Bakery-UI-UX?node-id=0-1&t=JxKxdgA9KTDEZZWX-1" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+              <a href="https://www.figma.com/design/ttNo605XT9KLRDltVsAO8F/Bakery-UI-UX?node-id=0-1&t=JxKxdgA9KTDEZZWX-1" target="_blank" rel="noopener noreferrer" class="btn btn-glass btn-sm">
                 View Figma Design
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
               </a>
             </div>
           </article>
+
         </div>
       </div>
     </section>
@@ -214,7 +266,7 @@
     <section id="skills" class="section skills-section">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">Skills & Technologies</h2>
+          <h2 class="section-title">Skills &amp; Technologies</h2>
           <p class="section-subtitle">Tools and capabilities for development, design, and site operations</p>
         </div>
 
@@ -222,46 +274,46 @@
           <div class="skill-card">
             <h3 class="skill-category">Web Development</h3>
             <ul class="skill-list">
-              <li><span class="bullet"></span> HTML5</li>
-              <li><span class="bullet"></span> CSS3</li>
-              <li><span class="bullet"></span> JavaScript</li>
-              <li><span class="bullet"></span> React</li>
+              <li><span class="skill-bullet"></span> HTML5 &amp; CSS3</li>
+              <li><span class="skill-bullet"></span> JavaScript (ES6+)</li>
+              <li><span class="skill-bullet"></span> React</li>
+              <li><span class="skill-bullet"></span> Git &amp; GitHub</li>
             </ul>
           </div>
 
           <div class="skill-card">
-            <h3 class="skill-category">UI/UX & Design</h3>
+            <h3 class="skill-category">UI/UX &amp; Design</h3>
             <ul class="skill-list">
-              <li><span class="bullet"></span> Figma</li>
-              <li><span class="bullet"></span> UI/UX Wireframing</li>
-              <li><span class="bullet"></span> Interface Prototyping</li>
-              <li><span class="bullet"></span> Visual Layouts</li>
+              <li><span class="skill-bullet"></span> Figma Wireframing</li>
+              <li><span class="skill-bullet"></span> User Interface Layouts</li>
+              <li><span class="skill-bullet"></span> Component Prototyping</li>
+              <li><span class="skill-bullet"></span> Visual Contrast &amp; Hierarchy</li>
             </ul>
           </div>
 
           <div class="skill-card">
             <h3 class="skill-category">Game Development</h3>
             <ul class="skill-list">
-              <li><span class="bullet"></span> Godot Engine 4.6.2</li>
-              <li><span class="bullet"></span> 2D Game Mechanics</li>
-              <li><span class="bullet"></span> Asset Integration</li>
+              <li><span class="skill-bullet"></span> Godot Engine 4.6.2</li>
+              <li><span class="skill-bullet"></span> 2D Game Mechanics</li>
+              <li><span class="skill-bullet"></span> Tilemaps &amp; Controls</li>
             </ul>
           </div>
 
-          <div class="skill-card highlight-skill-card">
+          <div class="skill-card">
             <h3 class="skill-category">Website Operations</h3>
             <ul class="skill-list">
-              <li><span class="bullet"></span> Bug Fixing & Debugging</li>
-              <li><span class="bullet"></span> Content Updates</li>
-              <li><span class="bullet"></span> Responsive Testing</li>
-              <li><span class="bullet"></span> Site Maintenance</li>
+              <li><span class="skill-bullet"></span> Bug Fixing &amp; Debugging</li>
+              <li><span class="skill-bullet"></span> Content &amp; Asset Updates</li>
+              <li><span class="skill-bullet"></span> Responsive Device Testing</li>
+              <li><span class="skill-bullet"></span> Site Maintenance &amp; Uptime</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- What I Can Contribute to a Website Operations Team Section with React Bits AnimatedList -->
+    <!-- What I Can Contribute to a Website Operations Team Section -->
     <section id="contributions" class="section contributions-section">
       <div class="container">
         <div class="section-header">
@@ -274,52 +326,44 @@
           <!-- Left Column: Core 4 Pillars -->
           <div class="contributions-grid">
             <div class="contribution-card">
-              <div class="contribution-header">
-                <h3>Bug Fixing</h3>
-              </div>
+              <h3>Bug Fixing</h3>
               <p>
                 Identifying, investigating, and resolving UI bugs, functional glitches, and layout breaks efficiently to keep user experiences consistent across pages.
               </p>
             </div>
 
             <div class="contribution-card">
-              <div class="contribution-header">
-                <h3>Content Updates</h3>
-              </div>
+              <h3>Content Updates</h3>
               <p>
                 Applying regular text, asset, and media updates with precision, ensuring information stays accurate and code formatting remains clean.
               </p>
             </div>
 
             <div class="contribution-card">
-              <div class="contribution-header">
-                <h3>Responsive Testing</h3>
-              </div>
+              <h3>Responsive Testing</h3>
               <p>
                 Performing thorough testing across mobile, tablet, and desktop viewports, checking touch targets, alignment, and readable typography across devices.
               </p>
             </div>
 
             <div class="contribution-card">
-              <div class="contribution-header">
-                <h3>Keeping the Site Running Smoothly</h3>
-              </div>
+              <h3>Keeping the Site Running Smoothly</h3>
               <p>
                 Monitoring operational stability, maintaining asset hygiene, minimizing unnecessary bloat, and ensuring pages remain fast and dependable.
               </p>
             </div>
           </div>
 
-          <!-- Right Column: Interactive <AnimatedList /> Component (React Bits Variant) -->
+          <!-- Right Column: Interactive <AnimatedList /> Component (Light Theme Variant) -->
           <div class="animated-list-wrapper">
             <div class="animated-list-title">
               <span>Operations Checklist</span>
-              <span class="keyboard-hint">Use ↑ ↓ keys to navigate</span>
+              <span class="keyboard-hint">Use ↑ ↓ keys</span>
             </div>
             
             <div class="scroll-list-container" id="animated-list-container">
               <div class="scroll-list" id="animated-scroll-list">
-                <!-- Items populated dynamically via AnimatedList script -->
+                <!-- Items populated dynamically -->
               </div>
               <div class="top-gradient" id="top-gradient" style="opacity: 0;"></div>
               <div class="bottom-gradient" id="bottom-gradient" style="opacity: 1;"></div>
@@ -344,7 +388,7 @@
                 <span class="contact-label">Email Address</span>
                 <a href="mailto:nafeesathnawfa@gmail.com" class="contact-link">nafeesathnawfa@gmail.com</a>
               </div>
-              <button id="copy-email-btn" class="btn btn-outline btn-sm" aria-label="Copy email address to clipboard">
+              <button id="copy-email-btn" class="btn btn-glass btn-sm" aria-label="Copy email address to clipboard">
                 <span id="copy-text">Copy Email</span>
               </button>
             </div>
@@ -378,35 +422,8 @@
     </div>
   </footer>
 
-  <!-- Lightbox Dialog for Screenshot View -->
-  <dialog id="lightbox-dialog" class="lightbox-dialog">
-    <div class="lightbox-content">
-      <button type="button" id="lightbox-close" class="lightbox-close-btn" aria-label="Close dialog">&times;</button>
-      <img id="lightbox-image" src="" alt="" class="lightbox-img">
-      <p id="lightbox-caption" class="lightbox-caption"></p>
-    </div>
-  </dialog>
-
-  <!-- Lightweight Client JS -->
+  <!-- Client JavaScript -->
   <script>
-    // Theme Toggle Logic
-    const themeToggleBtn = document.getElementById('theme-toggle');
-    const rootEl = document.documentElement;
-    
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      rootEl.setAttribute('data-theme', savedTheme);
-    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-      rootEl.setAttribute('data-theme', 'light');
-    }
-
-    themeToggleBtn.addEventListener('click', () => {
-      const currentTheme = rootEl.getAttribute('data-theme');
-      const nextTheme = currentTheme === 'light' ? 'dark' : 'light';
-      rootEl.setAttribute('data-theme', nextTheme);
-      localStorage.setItem('theme', nextTheme);
-    });
-
     // Mobile Navigation Toggle
     const mobileMenuBtn = document.getElementById('mobile-menu-toggle');
     const mainNav = document.getElementById('main-nav');
@@ -433,38 +450,16 @@
       try {
         await navigator.clipboard.writeText(emailToCopy);
         copyTextSpan.textContent = 'Copied!';
-        copyEmailBtn.classList.add('copied');
         setTimeout(() => {
           copyTextSpan.textContent = 'Copy Email';
-          copyEmailBtn.classList.remove('copied');
         }, 2500);
       } catch (err) {
-        copyTextSpan.textContent = 'Failed to copy';
+        copyTextSpan.textContent = 'Failed';
       }
     });
 
-    // Lightbox Functionality
-    const dialog = document.getElementById('lightbox-dialog');
-    const dialogImg = document.getElementById('lightbox-image');
-    const dialogCaption = document.getElementById('lightbox-caption');
-    const dialogCloseBtn = document.getElementById('lightbox-close');
-
-    document.querySelectorAll('.lightbox-trigger').forEach(trigger => {
-      trigger.addEventListener('click', () => {
-        const imageSrc = trigger.getAttribute('data-image');
-        const captionText = trigger.getAttribute('data-caption');
-        dialogImg.src = imageSrc;
-        dialogImg.alt = captionText;
-        dialogCaption.textContent = captionText;
-        dialog.showModal();
-      });
-    });
-
-    dialogCloseBtn.addEventListener('click', () => dialog.close());
-    dialog.addEventListener('click', (e) => { if (e.target === dialog) dialog.close(); });
-
     // --------------------------------------------------------------------------
-    // React Bits <AnimatedList /> Component Implementation
+    // AnimatedList Component Implementation (Light Theme Variant)
     // --------------------------------------------------------------------------
     const listItems = [
       { text: "Bug Fixing & Layout Issue Resolution", badge: "Priority" },

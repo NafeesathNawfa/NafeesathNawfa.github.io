@@ -318,12 +318,12 @@ a:hover {
 }
 
 /* --------------------------------------------------------------------------
-   5. Hero Section (Strict Modest Top Padding & 2-Row Layout)
+   5. Hero Section (Strict Modest Top Spacing & 2-Row Layout)
    -------------------------------------------------------------------------- */
 .hero-section {
   position: relative;
   padding-top: clamp(24px, 4vw, 56px);
-  padding-bottom: 3rem;
+  padding-bottom: 32px;
   overflow-x: clip;
   width: 100%;
   border-bottom: 1px solid var(--accent-highlight);
@@ -334,7 +334,7 @@ a:hover {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2.5rem;
-  align-items: start; /* Strictly start alignment, no extra vertical centering space */
+  align-items: start; /* Strictly start alignment, no extra vertical space */
   width: 100%;
 }
 
@@ -461,7 +461,7 @@ a:hover {
   display: grid;
   grid-template-columns: 1fr;
   gap: 24px;
-  margin-top: 32px;
+  margin-top: 24px;
   width: 100%;
   align-items: stretch;
 }
@@ -787,7 +787,7 @@ a:hover {
 }
 
 /* --------------------------------------------------------------------------
-   8. Skills Section (2x2 Grid, Direct Sub-Heading List, No Spacer Rules)
+   8. Skills Section (Aligned 52px Heading Wrappers & Absolute Accents)
    -------------------------------------------------------------------------- */
 .skills-grid {
   display: grid;
@@ -817,80 +817,43 @@ a:hover {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* List sits directly under heading, spare space falls at bottom of card */
+  justify-content: flex-start;
   align-items: flex-start;
   height: 100%;
   overflow: hidden;
 }
 
-/* Card 1: Web Development (Browser Strip Top) */
-.web-card-header {
-  margin-bottom: 0;
-  width: 100%;
-}
-
-.browser-strip {
+/* All heading wrappers have fixed 52px height to align headings & lists perfectly */
+.skill-heading-wrapper {
+  height: 52px;
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  padding: 0.4rem 0.6rem;
-  background: rgba(255, 255, 255, 0.6);
-  border: 1px solid var(--glass-border);
-  border-radius: 8px;
-  margin-bottom: 12px; /* 12px margin below browser strip */
   width: 100%;
+  box-sizing: border-box;
 }
 
-.browser-dots {
+/* Absolute Top-Right Accents */
+.top-dots-accent {
+  position: absolute;
+  top: 16px;
+  right: 16px;
   display: flex;
-  gap: 4px;
+  gap: 5px;
 }
 
-.browser-dot {
+.top-dots-accent .browser-dot {
   width: 7px;
   height: 7px;
   border-radius: 50%;
   background-color: var(--decorative);
-  opacity: 0.7;
+  opacity: 0.75;
 }
 
-.url-pill {
-  flex: 1;
-  height: 8px;
-  background: rgba(34, 34, 59, 0.08);
-  border-radius: 4px;
-}
-
-.skill-heading-group {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0;
-}
-
-.skill-icon-svg {
-  width: 1.35rem;
-  height: 1.35rem;
-  color: var(--text-main);
-  flex-shrink: 0;
-}
-
-.skill-category {
-  font-family: var(--font-serif);
-  font-size: clamp(1.15rem, 2.5vw, 1.45rem);
-  font-weight: 600;
-  line-height: 1.2;
-  color: var(--text-main);
-  margin-bottom: 0;
-}
-
-/* Card 2: UI/UX & Design (Figma Selection Box) */
 .figma-selection-box {
   position: relative;
   border: 1px solid var(--decorative);
   border-radius: 6px;
   padding: 0.4rem 0.65rem;
-  margin-bottom: 0;
   background: rgba(255, 255, 255, 0.3);
   display: inline-block;
 }
@@ -908,7 +871,6 @@ a:hover {
 .corner-handle.bottom-left { bottom: -4px; left: -4px; }
 .corner-handle.bottom-right { bottom: -4px; right: -4px; }
 
-/* Card 3: Game Development (Pixel Notched Corner) */
 .game-card-notched {
   clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 0 100%);
 }
@@ -923,17 +885,10 @@ a:hover {
   border-bottom-left-radius: 4px;
 }
 
-/* Card 4: Computer Science (O(n log n) Tag & Prompt) */
-.cs-card-header {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  margin-bottom: 0;
-  width: 100%;
-}
-
 .big-o-tag {
-  align-self: flex-end;
+  position: absolute;
+  top: 16px;
+  right: 16px;
   font-family: var(--font-accent);
   font-size: 0.675rem;
   letter-spacing: 0.05em;
@@ -953,13 +908,34 @@ a:hover {
   margin-right: 0.3rem;
 }
 
-/* List starts directly under heading with exact 14px gap */
+.skill-heading-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.skill-icon-svg {
+  width: 1.35rem;
+  height: 1.35rem;
+  color: var(--text-main);
+  flex-shrink: 0;
+}
+
+.skill-category {
+  font-family: var(--font-serif);
+  font-size: clamp(1.15rem, 2.5vw, 1.45rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text-main);
+}
+
+/* List starts directly under 52px heading wrapper with exact 16px gap */
 .skill-list {
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  margin-top: 14px; /* Exactly 14px margin directly beneath heading! */
+  margin-top: 16px; /* Exactly 16px margin directly beneath heading wrapper! */
   margin-bottom: 0;
   width: 100%;
 }
@@ -981,6 +957,33 @@ a:hover {
   display: inline-block;
   flex-shrink: 0;
   margin-top: 0.45em; /* Aligns bullet with the first line of text */
+}
+
+/* 5th Full-Width Card (Workshops & Events) */
+.skills-5th-card {
+  position: relative;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 1.75rem;
+  backdrop-filter: blur(12px);
+  box-shadow: var(--glass-shadow);
+  box-sizing: border-box;
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+.skill-list.list-two-col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem 2rem;
+  margin-top: 16px;
+}
+
+@media (min-width: 768px) {
+  .skill-list.list-two-col {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* --------------------------------------------------------------------------

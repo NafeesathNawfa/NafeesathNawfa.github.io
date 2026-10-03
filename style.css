@@ -318,7 +318,7 @@ a:hover {
 }
 
 /* --------------------------------------------------------------------------
-   5. Hero Section (Strict Grid & Container Sizing)
+   5. Hero Section (Strict Grid, Container Queries & Centered Alignment)
    -------------------------------------------------------------------------- */
 .hero-section {
   position: relative;
@@ -343,6 +343,12 @@ a:hover {
   }
 }
 
+@media (min-width: 1024px) {
+  .hero-grid {
+    align-items: center; /* Vertically center left & right columns on desktop */
+  }
+}
+
 .hero-left {
   container-type: inline-size;
   container-name: hero-left;
@@ -350,7 +356,7 @@ a:hover {
   max-width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.35rem;
   box-sizing: border-box;
 }
 
@@ -385,10 +391,10 @@ a:hover {
 }
 
 .hero-description {
-  font-size: 1.05rem;
+  font-size: 1.025rem;
   line-height: 1.7;
   color: var(--text-main);
-  max-width: 540px;
+  max-width: 550px;
 }
 
 .hero-actions {
@@ -396,7 +402,84 @@ a:hover {
   flex-direction: row;
   flex-wrap: wrap;
   gap: 1rem;
+  margin-top: 0.25rem;
+}
+
+/* Featured Project Card on Left Column */
+.featured-project-glass-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 18px;
+  padding: 1.15rem;
+  backdrop-filter: blur(12px);
+  box-shadow: var(--glass-shadow);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.15rem;
   margin-top: 0.5rem;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.featured-card-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.featured-badge {
+  font-family: var(--font-accent);
+  font-size: 0.675rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+.featured-title {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--text-main);
+}
+
+.featured-desc {
+  font-size: 0.875rem;
+  line-height: 1.45;
+  color: var(--text-main);
+}
+
+.featured-thumb-box {
+  flex-shrink: 0;
+  width: 110px;
+  max-height: 150px;
+  border-radius: 10px;
+  border: 1px solid var(--glass-border);
+  padding: 4px;
+  background: rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.featured-thumb {
+  width: 100%;
+  height: auto;
+  max-height: 140px;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.featured-link {
+  align-self: flex-start;
+  margin-top: 0.25rem;
 }
 
 .hero-right {
@@ -408,14 +491,14 @@ a:hover {
   box-sizing: border-box;
 }
 
-/* Overlapping Rounded Photo Cards Stack */
+/* Overlapping Photo Cards Stack */
 .hero-image-stack {
   position: relative;
   width: 100%;
   max-width: 280px;
   margin: 0 auto;
   box-sizing: border-box;
-  padding: 8px; /* Rotation padding container */
+  padding: 8px; /* Rotation padding buffer */
 }
 
 .card-back-tilted {
@@ -765,15 +848,186 @@ a:hover {
 }
 
 /* --------------------------------------------------------------------------
-   8. Skills Section
+   8. Skills Section (Unique Graphics per Card & Equal Height)
    -------------------------------------------------------------------------- */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 1.5rem;
+  align-items: stretch;
 }
 
 .skill-card {
+  position: relative;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 1.75rem;
+  backdrop-filter: blur(12px);
+  box-shadow: var(--glass-shadow);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+/* Card 1: Web Development (Browser Strip Top) */
+.web-card-header {
+  margin-bottom: 1.25rem;
+}
+
+.browser-strip {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 0.6rem;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.browser-dots {
+  display: flex;
+  gap: 4px;
+}
+
+.browser-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--decorative);
+  opacity: 0.7;
+}
+
+.url-pill {
+  flex: 1;
+  height: 8px;
+  background: rgba(34, 34, 59, 0.08);
+  border-radius: 4px;
+}
+
+.skill-heading-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.skill-icon-svg {
+  width: 1.35rem;
+  height: 1.35rem;
+  color: var(--text-main);
+  flex-shrink: 0;
+}
+
+.skill-category {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+/* Card 2: UI/UX & Design (Figma Selection Box) */
+.figma-selection-box {
+  position: relative;
+  border: 1px solid var(--decorative);
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 1.25rem;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.corner-handle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: var(--text-main);
+  border: 1px solid var(--bg-page);
+}
+
+.corner-handle.top-left { top: -4px; left: -4px; }
+.corner-handle.top-right { top: -4px; right: -4px; }
+.corner-handle.bottom-left { bottom: -4px; left: -4px; }
+.corner-handle.bottom-right { bottom: -4px; right: -4px; }
+
+/* Card 3: Game Development (Pixel Notched Corner) */
+.game-card-notched {
+  clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 0 100%);
+}
+
+.notch-corner-accent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 18px;
+  height: 18px;
+  background: var(--accent-highlight);
+  border-bottom-left-radius: 4px;
+}
+
+/* Card 4: Computer Science (O(n log n) Tag & Prompt) */
+.cs-card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.big-o-tag {
+  align-self: flex-end;
+  font-family: var(--font-accent);
+  font-size: 0.675rem;
+  letter-spacing: 0.05em;
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--glass-border);
+  padding: 0.2rem 0.55rem;
+  border-radius: 9999px;
+  font-weight: 600;
+}
+
+.terminal-prompt {
+  font-family: monospace;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--text-main);
+  margin-right: 0.3rem;
+}
+
+/* Fixed Bullet Lists with Hanging Indent */
+.skill-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: auto;
+}
+
+.skill-list li {
+  font-size: 0.95rem;
+  color: var(--text-main);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  line-height: 1.5;
+}
+
+.skill-bullet {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--decorative);
+  display: inline-block;
+  flex-shrink: 0;
+  margin-top: 0.45em; /* Aligns bullet with the first line of text */
+}
+
+/* --------------------------------------------------------------------------
+   9. Contact Section (Vertical Full-Width Rows)
+   -------------------------------------------------------------------------- */
+.contact-card {
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
   border-radius: 20px;
@@ -783,85 +1037,69 @@ a:hover {
   box-sizing: border-box;
 }
 
-.skill-category {
-  font-family: var(--font-serif);
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin-bottom: 1.25rem;
-  color: var(--text-main);
-}
-
-.skill-list {
-  list-style: none;
+.contact-rows-container {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1rem;
+  width: 100%;
 }
 
-.skill-list li {
-  font-size: 0.975rem;
-  color: var(--text-main);
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-.skill-bullet {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: var(--decorative);
-  display: inline-block;
-}
-
-/* --------------------------------------------------------------------------
-   9. Contact Section
-   -------------------------------------------------------------------------- */
-.contact-card {
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
-  border-radius: 20px;
-  padding: 2.25rem;
-  backdrop-filter: blur(12px);
-  box-shadow: var(--glass-shadow);
-  box-sizing: border-box;
-}
-
-.contact-methods {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
-}
-
-.contact-item {
+.contact-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  padding: 1.25rem;
+  gap: 1.25rem;
+  padding: 1.25rem 1.5rem;
   background: rgba(255, 255, 255, 0.5);
   border: 1px solid var(--glass-border);
   border-radius: 14px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.contact-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.contact-label {
+.contact-row-label {
   font-family: var(--font-accent);
-  font-size: 0.725rem;
-  letter-spacing: 0.05em;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--text-main);
   font-weight: 600;
+  min-width: 85px;
+  flex-shrink: 0;
 }
 
-.contact-link {
+.contact-row-value {
+  font-size: 1rem;
   font-weight: 500;
   color: var(--text-main);
-  word-break: break-all;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+
+.contact-row-value:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.contact-row-action {
+  flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+  .contact-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+  .contact-row-value {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+  .contact-row-action {
+    align-self: flex-end;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -932,5 +1170,15 @@ a:hover {
     flex-direction: column;
     gap: 1rem;
     text-align: center;
+  }
+
+  .featured-project-glass-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .featured-thumb-box {
+    width: 100%;
+    max-height: 140px;
   }
 }

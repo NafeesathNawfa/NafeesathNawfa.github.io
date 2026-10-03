@@ -70,6 +70,25 @@
                 GitHub
               </a>
             </div>
+
+            <!-- Featured Project Glass Card (Left Column) -->
+            <div class="featured-project-glass-card animate-fade-in delay-500">
+              <div class="featured-card-content">
+                <span class="featured-badge">FEATURED PROJECT</span>
+                <h3 class="featured-title">DriftCheck</h3>
+                <p class="featured-desc">
+                  Tracks lab results over time and flags changes from a person's own baseline.
+                </p>
+                <a href="#projects" class="btn btn-sm btn-glass featured-link">
+                  View project
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                </a>
+              </div>
+              <div class="featured-thumb-box">
+                <img src="assets/drift1.jpeg" alt="DriftCheck lab tracking dashboard thumbnail" class="featured-thumb">
+              </div>
+            </div>
+
           </div>
 
           <!-- RIGHT COLUMN -->
@@ -269,8 +288,23 @@
         </div>
 
         <div class="skills-grid">
+          
+          <!-- Card 1: Web Development (Browser Strip & Code Brackets Icon) -->
           <div class="skill-card">
-            <h3 class="skill-category">Web Development</h3>
+            <div class="web-card-header">
+              <div class="browser-strip" aria-hidden="true">
+                <div class="browser-dots">
+                  <span class="browser-dot"></span>
+                  <span class="browser-dot"></span>
+                  <span class="browser-dot"></span>
+                </div>
+                <div class="url-pill"></div>
+              </div>
+              <div class="skill-heading-group">
+                <svg class="skill-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                <h3 class="skill-category">Web Development</h3>
+              </div>
+            </div>
             <ul class="skill-list">
               <li><span class="skill-bullet"></span> HTML5 &amp; CSS3</li>
               <li><span class="skill-bullet"></span> JavaScript (ES6+)</li>
@@ -279,8 +313,18 @@
             </ul>
           </div>
 
+          <!-- Card 2: UI/UX & Design (Figma Selection Box & Pen Tool Icon) -->
           <div class="skill-card">
-            <h3 class="skill-category">UI/UX &amp; Design</h3>
+            <div class="figma-selection-box">
+              <span class="corner-handle top-left" aria-hidden="true"></span>
+              <span class="corner-handle top-right" aria-hidden="true"></span>
+              <span class="corner-handle bottom-left" aria-hidden="true"></span>
+              <span class="corner-handle bottom-right" aria-hidden="true"></span>
+              <div class="skill-heading-group">
+                <svg class="skill-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
+                <h3 class="skill-category">UI/UX &amp; Design</h3>
+              </div>
+            </div>
             <ul class="skill-list">
               <li><span class="skill-bullet"></span> Figma Wireframing</li>
               <li><span class="skill-bullet"></span> User Interface Layouts</li>
@@ -289,8 +333,13 @@
             </ul>
           </div>
 
-          <div class="skill-card">
-            <h3 class="skill-category">Game Development</h3>
+          <!-- Card 3: Game Development (Pixel Notched Corner & Controller Icon) -->
+          <div class="skill-card game-card-notched">
+            <div class="notch-corner-accent" aria-hidden="true"></div>
+            <div class="skill-heading-group" style="margin-bottom: 1.25rem;">
+              <svg class="skill-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" y1="12" x2="10" y2="12"></line><line x1="8" y1="10" x2="8" y2="14"></line><circle cx="15" cy="13" r="1"></circle><circle cx="18" cy="11" r="1"></circle><rect x="2" y="6" width="20" height="12" rx="4"></rect></svg>
+              <h3 class="skill-category">Game Development</h3>
+            </div>
             <ul class="skill-list">
               <li><span class="skill-bullet"></span> Godot Engine 4.6.2</li>
               <li><span class="skill-bullet"></span> 2D Game Mechanics</li>
@@ -298,8 +347,15 @@
             </ul>
           </div>
 
+          <!-- Card 4: Computer Science (Terminal Prompt & Big-O Tag) -->
           <div class="skill-card">
-            <h3 class="skill-category">Computer Science</h3>
+            <div class="cs-card-header">
+              <span class="big-o-tag">O(n log n)</span>
+              <div class="skill-heading-group">
+                <span class="terminal-prompt" aria-hidden="true">&gt;_</span>
+                <h3 class="skill-category">Computer Science</h3>
+              </div>
+            </div>
             <ul class="skill-list">
               <li><span class="skill-bullet"></span> Algorithms &amp; Data Structures</li>
               <li><span class="skill-bullet"></span> Data Engineering Fundamentals</li>
@@ -307,11 +363,12 @@
               <li><span class="skill-bullet"></span> Quality Assurance</li>
             </ul>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact Section (Vertical Full-Width Rows) -->
     <section id="contact" class="section contact-section">
       <div class="container">
         <div class="section-header">
@@ -320,30 +377,41 @@
         </div>
 
         <div class="contact-card">
-          <div class="contact-methods">
-            <div class="contact-item">
-              <div class="contact-info">
-                <span class="contact-label">Email Address</span>
-                <a href="mailto:nafeesathnawfa@gmail.com" class="contact-link">nafeesathnawfa@gmail.com</a>
-              </div>
-              <button id="copy-email-btn" class="btn btn-glass btn-sm" aria-label="Copy email address to clipboard">
-                <span id="copy-text">Copy Email</span>
-              </button>
-            </div>
-
-            <div class="contact-item">
-              <div class="contact-info">
-                <span class="contact-label">GitHub</span>
-                <a href="https://github.com/NafeesathNawfa" target="_blank" rel="noopener noreferrer" class="contact-link">github.com/NafeesathNawfa</a>
+          <div class="contact-rows-container">
+            
+            <!-- Row 1: Email -->
+            <div class="contact-row">
+              <span class="contact-row-label">EMAIL</span>
+              <a href="mailto:nafeesathnawfa@gmail.com" class="contact-row-value">nafeesathnawfa@gmail.com</a>
+              <div class="contact-row-action">
+                <button id="copy-email-btn" class="btn btn-glass btn-sm" aria-label="Copy email address to clipboard">
+                  <span id="copy-text">Copy email</span>
+                </button>
               </div>
             </div>
 
-            <div class="contact-item">
-              <div class="contact-info">
-                <span class="contact-label">LinkedIn</span>
-                <a href="https://www.linkedin.com/in/nafeesathnawfalhf" target="_blank" rel="noopener noreferrer" class="contact-link">linkedin.com/in/nafeesathnawfalhf</a>
+            <!-- Row 2: LinkedIn -->
+            <div class="contact-row">
+              <span class="contact-row-label">LINKEDIN</span>
+              <a href="https://www.linkedin.com/in/nafeesathnawfalhf" target="_blank" rel="noopener noreferrer" class="contact-row-value">linkedin.com/in/nafeesathnawfalhf</a>
+              <div class="contact-row-action">
+                <a href="https://www.linkedin.com/in/nafeesathnawfalhf" target="_blank" rel="noopener noreferrer" class="btn btn-glass btn-sm">
+                  Open ↗
+                </a>
               </div>
             </div>
+
+            <!-- Row 3: GitHub -->
+            <div class="contact-row">
+              <span class="contact-row-label">GITHUB</span>
+              <a href="https://github.com/NafeesathNawfa" target="_blank" rel="noopener noreferrer" class="contact-row-value">github.com/NafeesathNawfa</a>
+              <div class="contact-row-action">
+                <a href="https://github.com/NafeesathNawfa" target="_blank" rel="noopener noreferrer" class="btn btn-glass btn-sm">
+                  Open ↗
+                </a>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
@@ -389,7 +457,7 @@
         await navigator.clipboard.writeText(emailToCopy);
         copyTextSpan.textContent = 'Copied!';
         setTimeout(() => {
-          copyTextSpan.textContent = 'Copy Email';
+          copyTextSpan.textContent = 'Copy email';
         }, 2500);
       } catch (err) {
         copyTextSpan.textContent = 'Failed';
